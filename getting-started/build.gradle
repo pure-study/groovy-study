@@ -13,7 +13,7 @@ dependencies {
 sourceSets {
     main {
         groovy {
-            srcDirs = ['src/groovy']
+            srcDirs = ['src/groovy/differences', 'src/groovy/groovy-dev-kit']
         }
     }
 
