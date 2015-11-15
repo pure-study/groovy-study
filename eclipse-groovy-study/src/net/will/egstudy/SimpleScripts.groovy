@@ -72,4 +72,23 @@ enum Planet {
 Planet.EARTH.printMe()
 
 // --------------------------
+def msg = "Hello!"
+println msg.metaClass 
+String.metaClass.up = { delegate.toUpperCase() }
+println msg.up()
 
+println "-----"
+msg.metaClass.methods.each { println it.name }
+println "-----"
+msg.metaClass.properties.each { println it.name }
+println "-----"
+
+if (msg.metaClass.respondsTo(msg, 'up')) {
+    println msg.toUpperCase()
+}
+
+if (msg.metaClass.hasProperty(msg, 'bytes')) {
+    println msg.bytes.encodeBase64()
+}
+
+// --------------------------
