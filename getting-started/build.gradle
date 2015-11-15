@@ -6,14 +6,16 @@ repositories {
 }
 
 dependencies {
-    compile 'org.codehaus.groovy:groovy:2.3.10'
+    compile 'org.codehaus.groovy:groovy:2.4.4'
     testCompile 'junit:junit:4.12'
 }
 
 sourceSets {
     main {
         groovy {
-            srcDirs = ['src/groovy/differences', 'src/groovy/groovy-dev-kit']
+            srcDirs = ['src/groovy/differences',
+                       'src/groovy/groovy-dev-kit',
+                       'src/groovy/testing-guide']
         }
     }
 
