@@ -1,3 +1,5 @@
+package net.will.ggs.differences
+
 new File('ResourceManagement.groovy').eachLine('UTF-8') {
     println it
 }

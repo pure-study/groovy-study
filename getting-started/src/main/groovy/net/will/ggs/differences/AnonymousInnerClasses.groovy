@@ -1,3 +1,5 @@
+package net.will.ggs.differences
+
 import java.util.concurrent.CountDownLatch
 import java.util.concurrent.TimeUnit
 

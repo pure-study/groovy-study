@@ -1,3 +1,5 @@
+package net.will.ggs.testingguide
+
 class TranslationService2 {
     String convert(String key) {
         return "test"

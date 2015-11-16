@@ -1,3 +1,5 @@
+package net.will.ggs.groovydevkit
+
 baseDir = new File("/tmp")
 
 new File(baseDir,'haiku.txt').withWriter('utf-8') { writer ->

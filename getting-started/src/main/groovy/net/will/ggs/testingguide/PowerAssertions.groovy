@@ -1,3 +1,5 @@
+package net.will.ggs.testingguide
+
 [[1,2,3,3,3,3,4]].first()
 [[1,2,3,3,3,3,4]].first().unique()
 
