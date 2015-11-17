@@ -39,7 +39,7 @@ dependencies {
 cobertura {
     format = 'html'
     includes = ['**/*.java', '**/*.groovy']
-    excludes = ['com/thirdparty/**/*.*']
+    excludes = ['net/will/ggs/differences/**/*.*', 'net/will/ggs/groovydevkit/**/*.*']
 }
 
 jar {

@@ -1,10 +1,11 @@
 package net.will.ggs.testingguide.inclass
 
-class ClosureCoercion {
+import org.junit.Test;
 
-    static main(args) {
+class BaseServiceTest {
+    @Test
+    void testDoSomethingWithClosureCoercion() {
         BaseService service = { -> println 'doing something' }
         service.doSomething()
     }
-
 }
