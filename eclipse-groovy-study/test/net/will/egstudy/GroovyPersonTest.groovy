@@ -1,10 +1,8 @@
 package net.will.egstudy
 
-import static org.junit.Assert.*;
-
 import org.junit.Test;
 
-class GroovyPersonTest {
+class GroovyPersonTest extends groovy.test.GroovyAssert {
     @Test
     void testToString() {
         Person p = new Person("name":"ddd", "age":18)
