@@ -7,7 +7,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "com.eriwen:gradle-cobertura-plugin:1.1.1"
+        classpath "net.saliman:gradle-cobertura-plugin:2.2.8"
     }
 }
 
@@ -34,11 +34,6 @@ dependencies {
 
     testCompile "org.codehaus.groovy:groovy-test:${groovyVersion}"
     testCompile "junit:junit:${junitVersion}"
-}
-
-cobertura {
-    format = 'html'
-    includes = ['**/*.java', '**/*.groovy']
 }
 
 /*
