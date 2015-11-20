@@ -45,15 +45,22 @@ class ListTest extends GroovyAssert {
         letters.add 'f'
         assert letters[-1] == 'f'
         
+        assert letters[1, 3] == ['b', 'd']
+        assert letters[2..4] == ['C', 'd', 'e']
+    }
+    
+    @Test
+    void testListAccess_AddAll() {
+        def letters = ['a', 'b', 'c', 'd', 'e', 'f']
+        
         shouldFail {
-            letters.addAll ['g', 'h']
+            //groovy.lang.MissingPropertyException: Exception evaluating property 'addAll' for java.util.ArrayList, Reason: groovy.lang.MissingPropertyException: No such property: addAll for class: java.lang.String
+            letters.addAll ['g', 'h']  // groovy.lang.MissingPropertyException
         }
+        
         letters.addAll(['g', 'h'])
         assert letters[-2] == 'g'
         assert letters.size() == 8
-        
-        assert letters[1, 3] == ['b', 'd']
-        assert letters[2..4] == ['C', 'd', 'e']
     }
     
     @Test
