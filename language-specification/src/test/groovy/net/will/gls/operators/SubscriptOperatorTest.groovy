@@ -1,10 +1,11 @@
 package net.will.gls.operators
 
-import org.junit.Test
-
+import groovy.test.GroovyAssert
 import net.will.gls.operators.subscriptop.User
 
-class SubscriptOperatorTest {
+import org.junit.Test
+
+class SubscriptOperatorTest extends GroovyAssert {
     @Test
     void testSubscriptOperator_Basic() {
         def list = [0,1,2,3,4]
@@ -22,9 +23,17 @@ class SubscriptOperatorTest {
         def user = new User(id: 1, name: 'Alex')
         assert user[0] == 1
         assert user[1] == 'Alex'
+        shouldFail IllegalArgumentException, {
+            assert user[-1] == 'Alex'
+            assert user[2] == 'Alex'
+        }
         
         user[0] = 2
         user[1] = 'Bob'
+        shouldFail IllegalArgumentException, {
+            user[-1] = 'Bob'
+            user[2] = 'Bob'
+        }
         assert user.id == 2
         assert user.name == 'Bob'
     }
