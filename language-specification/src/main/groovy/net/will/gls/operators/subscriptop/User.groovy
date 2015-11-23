@@ -1,7 +1,7 @@
 package net.will.gls.operators.subscriptop
 
 class User {
-    Long id
+    Integer id
     String name
     
     def getAt(int i) {

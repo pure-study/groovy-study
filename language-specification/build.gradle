@@ -1,6 +1,3 @@
-def groovyVersion = '2.4.4'
-def junitVersion = '4.12'
-
 buildscript {
     repositories {
         mavenLocal()
@@ -14,6 +11,9 @@ buildscript {
 apply plugin: 'groovy'
 apply plugin: 'eclipse'
 apply plugin: 'cobertura'
+
+def groovyVersion = '2.4.4'
+def junitVersion = '4.12'
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8

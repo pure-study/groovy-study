@@ -23,7 +23,9 @@ class SubscriptOperatorTest {
         assert user[0] == 1
         assert user[1] == 'Alex'
         
+        user[0] = 2
         user[1] = 'Bob'
+        assert user.id == 2
         assert user.name == 'Bob'
     }
 }
