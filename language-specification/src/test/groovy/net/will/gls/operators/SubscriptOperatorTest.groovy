@@ -25,14 +25,14 @@ class SubscriptOperatorTest extends GroovyAssert {
         assert user[1] == 'Alex'
         shouldFail IllegalArgumentException, {
             assert user[-1] == 'Alex'
-            assert user[2] == 'Alex'
+            //assert user[2] == 'Alex'
         }
         
         user[0] = 2
         user[1] = 'Bob'
         shouldFail IllegalArgumentException, {
             user[-1] = 'Bob'
-            user[2] = 'Bob'
+            //user[2] = 'Bob'
         }
         assert user.id == 2
         assert user.name == 'Bob'
