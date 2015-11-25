@@ -4,7 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath "net.saliman:gradle-cobertura-plugin:${coberturaVersion}"
+        classpath "net.saliman:gradle-cobertura-plugin:${coberturaPluginVersion}"
     }
 }
 
@@ -36,10 +36,3 @@ dependencies {
     testRuntime "org.slf4j:slf4j-simple:1.7.13"  // for gradle-cobertura-plugin 2.2.7+
 }
 
-/*
-jar {
-    manifest {
-        attributes 'Main-Class': 'HelloWorld'
-    }
-}
-*/
