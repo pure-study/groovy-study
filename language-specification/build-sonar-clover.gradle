@@ -1,0 +1,71 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "com.bmuschko:gradle-clover-plugin:${cloverPluginVersion}"
+        classpath "org.sonarqube.gradle:gradle-sonarqube-plugin:${sonarPluginVersion}"
+    }
+}
+
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+apply plugin: 'com.bmuschko.clover'
+apply plugin: "org.sonarqube"
+
+allprojects {   
+  ext.baseVersion = "0.1"
+  ext.snapshotVersion = true
+  
+  group = "net.will"
+  version = "$baseVersion" + (snapshotVersion ? "-SNAPSHOT" : "") 
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+eclipse {
+    classpath {
+        containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
+        containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
+    }
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
+
+    testCompile "org.codehaus.groovy:groovy-test:${groovyVersion}"
+    testCompile "junit:junit:${junitVersion}"
+    testCompile "org.codehaus.groovy:groovy-all:${groovyVersion}"
+
+    testRuntime "org.slf4j:slf4j-api:1.7.13"     // for gradle-cobertura-plugin 2.2.7+
+    testRuntime "org.slf4j:slf4j-simple:1.7.13"  // for gradle-cobertura-plugin 2.2.7+
+    testRuntime "org.codehaus.groovy:groovy-groovysh:${groovyVersion}"
+    
+    clover 'com.cenqua.clover:clover:3.2.0'
+}
+
+clover {
+    licenseLocation = '/home/8ug/DevTools/clover/license/clover.license'
+    
+    report {
+        html = true
+    }
+}
+
+sonarqube {
+    properties {
+        property "sonar.projectName", "Groovy Language Specification"
+        //property "sonar.projectKey", "org.sonarqube:java-gradle-simple"
+        //cloverReportPath = file("$reportsDir/clover/clover.xml")
+    }
+}
+
