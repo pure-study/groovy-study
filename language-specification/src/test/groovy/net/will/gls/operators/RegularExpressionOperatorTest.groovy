@@ -13,6 +13,15 @@ class RegularExpressionOperatorTest extends GroovyAssert {
         def p = ~/foo/
         assert p instanceof Pattern
         
+        p = ~'foo'
+        assert p instanceof Pattern
+        p = ~"foo"
+        assert p instanceof Pattern
+        
+        def pattern = 'foo'
+        p = ~"${pattern}"
+        assert p instanceof Pattern
+        
         // the dollar-slashy string lets you use slashes and the dollar sign without having to escape them
         p = ~$/dollar/slashy $ string/$
         assert p instanceof Pattern
