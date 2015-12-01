@@ -26,5 +26,9 @@ class CoercionOperatorTest extends GroovyAssert {
         shouldFail {
             assert p.id == 1
         }
+        
+        shouldFail{
+            def error_p = u as Car
+        }
     }
 }

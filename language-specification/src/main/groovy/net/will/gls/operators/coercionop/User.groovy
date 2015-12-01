@@ -5,7 +5,7 @@ class User {
     String name
     
     def asType(Class target) {
-        if (target==Identifiable) {
+        if (target == Identifiable) {
             return new Identifiable(name: name)
         }
         throw new ClassCastException("User cannot be coerced into $target")
