@@ -1,13 +1,10 @@
-def groovyVersion = '2.4.4'
-def junitVersion = '4.12'
-
 buildscript {
     repositories {
         mavenLocal()
         mavenCentral()
     }
     dependencies {
-        classpath "com.eriwen:gradle-cobertura-plugin:1.1.1"
+        classpath "net.saliman:gradle-cobertura-plugin:${coberturaPluginVersion}"
     }
 }
 
@@ -15,12 +12,12 @@ apply plugin: 'groovy'
 apply plugin: 'eclipse'
 apply plugin: 'cobertura'
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
+sourceCompatibility = "${jdkVersion}"
+targetCompatibility = "${jdkVersion}"
 eclipse {
     classpath {
         containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
-        containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
+        containers "org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-${jdkVersion}"
     }
 }
 
@@ -31,19 +28,12 @@ repositories {
 
 dependencies {
     compile "org.codehaus.groovy:groovy:${groovyVersion}"
-    
+    compile "javax.servlet:servlet-api:2.5"
+
     testCompile "org.codehaus.groovy:groovy-test:${groovyVersion}"
     testCompile "junit:junit:${junitVersion}"
+
+    testRuntime "org.slf4j:slf4j-api:1.7.13"     // for gradle-cobertura-plugin 2.2.7+
+    testRuntime "org.slf4j:slf4j-simple:1.7.13"  // for gradle-cobertura-plugin 2.2.7+
 }
 
-cobertura {
-    format = 'html'
-    includes = ['**/*.java', '**/*.groovy']
-    excludes = ['net/will/ggs/differences/**/*.*', 'net/will/ggs/groovydevkit/**/*.*']
-}
-
-jar {
-    manifest {
-        attributes 'Main-Class': 'HelloWorld'
-    }
-}
