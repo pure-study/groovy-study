@@ -1,0 +1,16 @@
+
+apply plugin: 'groovy'
+apply plugin: 'eclipse'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.codehaus.groovy:groovy:${groovyVersion}"
+
+    testCompile "org.codehaus.groovy:groovy-test:${groovyVersion}"
+    testCompile "junit:junit:${junitVersion}"
+}
+
