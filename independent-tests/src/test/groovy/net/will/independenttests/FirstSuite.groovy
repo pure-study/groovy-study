@@ -10,4 +10,12 @@ class FirstSuite {
         assert str?.equalsIgnoreCase("Completed")
         assert str ==~ "(?i)COMPLETED"  // equivalent of equalsIgnoreCase()
     }
+    
+    @Test
+    void string_replaceAll() {
+        String src = 'before ${to_replace} after';
+        String dest = "before middle after";
+        
+        assert src.replaceAll('\\$\\{to_replace\\}', 'middle') == dest
+    }
 }
