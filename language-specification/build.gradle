@@ -8,7 +8,6 @@ buildscript {
     }
 }
 
-apply plugin: 'groovy'
 apply plugin: 'eclipse'
 apply plugin: 'cobertura'
 
@@ -21,16 +20,8 @@ eclipse {
     }
 }
 
-repositories {
-    mavenLocal()
-    mavenCentral()
-}
-
 dependencies {
     compile "org.codehaus.groovy:groovy:${groovyVersion}"
-
-    testCompile "org.codehaus.groovy:groovy-test:${groovyVersion}"
-    testCompile "junit:junit:${junitVersion}"
 
     testRuntime "org.slf4j:slf4j-api:1.7.13"     // for gradle-cobertura-plugin 2.2.7+
     testRuntime "org.slf4j:slf4j-simple:1.7.13"  // for gradle-cobertura-plugin 2.2.7+

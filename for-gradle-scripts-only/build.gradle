@@ -1,13 +1,4 @@
-def groovyVersion = '2.4.4'
-def junitVersion = '4.12'
-
-apply plugin: 'groovy'
 apply plugin: 'eclipse'
-
-repositories {
-    mavenLocal()
-    mavenCentral()
-}
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -20,9 +11,6 @@ eclipse {
 
 dependencies {
     compile "org.codehaus.groovy:groovy:${groovyVersion}"
-    
-    testCompile "org.codehaus.groovy:groovy-test:${groovyVersion}"
-    testCompile "junit:junit:${junitVersion}"
 }
 /*
 sourceSets {
