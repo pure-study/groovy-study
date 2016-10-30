@@ -1,4 +1,4 @@
-package net.will.gls.closure
+package net.will.gls.closures
 
 import groovy.test.GroovyAssert
 
