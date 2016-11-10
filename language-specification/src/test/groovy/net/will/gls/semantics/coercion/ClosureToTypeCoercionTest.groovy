@@ -1,5 +1,8 @@
 package net.will.gls.semantics.coercion
 
+import static java.lang.Math.PI;
+import static java.lang.Math.abs;
+
 import org.junit.Test;
 
 import groovy.test.GroovyAssert
@@ -91,6 +94,14 @@ class ClosureToTypeCoercionTest extends GroovyAssert {
     void test_string2Enum_ExplicitCoercionForMethodCall() {
         assert switchState('up' as State) == State.down
         assert switchState(State.down) == State.up
+    }
+    
+    @Test
+    void test_customTypeCoercion() {
+        def sigma = 1E-16
+        def polar = new Polar(r:1.0, phi:PI/2)
+        def cartesian = polar as Cartesian
+        assert abs(cartesian.x-sigma) < sigma
     }
     
 }
