@@ -13,16 +13,11 @@ apply plugin: 'cobertura'
 
 sourceCompatibility = "${jdkVersion}"
 targetCompatibility = "${jdkVersion}"
-eclipse {
-    classpath {
-        containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
-        containers "org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-${jdkVersion}"
-    }
-}
 
 dependencies {
     compile "org.codehaus.groovy:groovy:${groovyVersion}"
     compile "javax.servlet:servlet-api:2.5"
+    compile "com.google.guava:guava:17.0"
 
     testRuntime "org.slf4j:slf4j-api:1.7.13"     // for gradle-cobertura-plugin 2.2.7+
     testRuntime "org.slf4j:slf4j-simple:1.7.13"  // for gradle-cobertura-plugin 2.2.7+
