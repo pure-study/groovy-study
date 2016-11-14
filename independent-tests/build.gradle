@@ -1,7 +1,3 @@
 
 apply plugin: 'eclipse'
 
-dependencies {
-    compile "org.codehaus.groovy:groovy:${groovyVersion}"
-}
-

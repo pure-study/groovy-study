@@ -7,6 +7,8 @@ subprojects {
     }
 
     dependencies {
+        compile "org.codehaus.groovy:groovy:${groovyVersion}"
+        
         testCompile 'junit:junit:${junitVersion}'
         testCompile "org.codehaus.groovy:groovy-test:${groovyVersion}"
     }

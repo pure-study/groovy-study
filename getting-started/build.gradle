@@ -15,7 +15,6 @@ sourceCompatibility = "${jdkVersion}"
 targetCompatibility = "${jdkVersion}"
 
 dependencies {
-    compile "org.codehaus.groovy:groovy:${groovyVersion}"
     compile "javax.servlet:servlet-api:2.5"
     compile "com.google.guava:guava:17.0"
 
