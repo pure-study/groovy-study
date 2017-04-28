@@ -3,5 +3,7 @@ apply plugin: 'eclipse'
 
 dependencies {
     compile group: 'org.codehaus.groovy', name: 'groovy-json', version: "${groovyVersion}"
+    
+    testCompile group: 'org.spockframework', name: 'spock-core', version: "${spockVersion}"
 }
 
