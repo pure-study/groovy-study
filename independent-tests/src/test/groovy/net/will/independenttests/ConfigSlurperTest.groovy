@@ -8,12 +8,15 @@ class ConfigSlurperTest extends GroovyAssert {
     def configContentInMultipleLines = """
 profile {
     functions {
-       includes = [
-          [module:"m1", function:["f1","f2"]],
-          [module:"m2", function:["f3"]]
-       ]
-       excludes = [
-       ]
+        includes = [
+            [module:"m1", function:["f1","f2"]],
+            [module:"m2", function:["f3"]]
+        ]
+        excludes = [
+        ]
+        queries = [
+            [id:"q1", query:{it.some.prop}]
+        ]
     }
     groups = [
     ]
