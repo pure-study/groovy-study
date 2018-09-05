@@ -32,4 +32,14 @@ class DataDrivenTestingSpec extends Specification {
         where:
         [a, b, c] << sql.rows("select a, b, c from maxdata")
     }
+    
+    def "single column test"() {
+        expect:
+        a > 0
+        
+        where:
+        a | _
+        1 | _
+        7 | _
+    }
 }
