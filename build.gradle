@@ -19,11 +19,15 @@ subprojects {
     }
 
     dependencies {
-        compile "org.codehaus.groovy:groovy:${groovyVersion}"
+        implementation "org.codehaus.groovy:groovy:${groovyVersion}"
         
-        testCompile 'junit:junit:${junitVersion}'
-        testCompile "org.codehaus.groovy:groovy-test:${groovyVersion}"
+        testImplementation 'junit:junit:${junitVersion}'
+        testImplementation "org.codehaus.groovy:groovy-test:${groovyVersion}"
     }
 
     version = '0.1'
+}
+
+wrapper {
+    gradleVersion = '5.0'
 }

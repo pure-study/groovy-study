@@ -1,24 +1,16 @@
-buildscript {
-    repositories {
-        mavenLocal()
-        mavenCentral()
-    }
-    dependencies {
-        classpath "net.saliman:gradle-cobertura-plugin:${coberturaPluginVersion}"
-    }
+plugins {
+    id 'eclipse'
+    id 'net.saliman.cobertura' version '2.5.4'
 }
-
-apply plugin: 'eclipse'
-apply plugin: 'cobertura'
 
 sourceCompatibility = "${jdkVersion}"
 targetCompatibility = "${jdkVersion}"
 
 dependencies {
-    compile "javax.servlet:servlet-api:2.5"
-    compile "com.google.guava:guava:17.0"
+    implementation "javax.servlet:servlet-api:2.5"
+    implementation "com.google.guava:guava:17.0"
 
-    testRuntime "org.slf4j:slf4j-api:1.7.13"     // for gradle-cobertura-plugin 2.2.7+
-    testRuntime "org.slf4j:slf4j-simple:1.7.13"  // for gradle-cobertura-plugin 2.2.7+
+    testImplementation "org.slf4j:slf4j-api:1.7.13"     // for gradle-cobertura-plugin 2.2.7+
+    testImplementation "org.slf4j:slf4j-simple:1.7.13"  // for gradle-cobertura-plugin 2.2.7+
 }
 

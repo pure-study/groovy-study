@@ -14,10 +14,12 @@ sourceSets {
 }
 */
 
-task testOperationOnSrcDirs << {
-    println sourceSets.main.groovy.srcDirs
-    println sourceSets.metaClass
-    println sourceSets.main.groovy.srcDirs.metaClass
-    
-    assert sourceSets.main.groovy.srcDirs instanceof Set
+task testOperationOnSrcDirs {
+    doLast {
+        println sourceSets.main.groovy.srcDirs
+        println sourceSets.metaClass
+        println sourceSets.main.groovy.srcDirs.metaClass
+        
+        assert sourceSets.main.groovy.srcDirs instanceof Set
+    }
 }
